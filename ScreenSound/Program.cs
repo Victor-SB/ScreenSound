@@ -24,7 +24,20 @@
 //albumDoQuenn.ExibirMusicasDoAlbum();
 //queen.ExibirDiscografia();
 
-Episodio ep1 = new (1, "Tecnicas de facilitação", 45);
+Episodio ep1 = new (2, "Tecnicas de facilitação", 45);
 ep1.AdicionarConvidados("Victor Hugo");
 ep1.AdicionarConvidados("Beatriz Soares");
-Console.WriteLine(ep1.Resumo);
+
+Episodio ep2 = new(1, "Tecnicas de aprendizado", 67);
+ep2.AdicionarConvidados("Bernardo");
+ep2.AdicionarConvidados("Felipe");
+ep2.AdicionarConvidados("Luciana");
+
+
+
+Podcast podcast = new("Igão & Mitico", "PodPah");
+podcast.AdicionarEpsodio(ep1);
+podcast.AdicionarEpsodio(ep2);
+podcast.ExibirDetalhes();
+
+
