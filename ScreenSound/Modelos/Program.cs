@@ -2,37 +2,32 @@
 using ScreenSound.Menus;
 using ScreenSound.Modelos;
 
-try
+
+var context = new ScreenSoundContext();
+var artistaDAL = new ArtistaDAL(context);
+var musicaDAL = new ScreenSoundContext();
+
 {
-    var context = new ScreenSoundContext();
-    var artistaDAL = new ArtistaDAL(context);
+    var musicaDAL = new MusicaDAL(context);
 
-    var novoArtista = new Artista("Foo Fighters", "Foo Fighters é uma banda de rock alternativo americana formada por Dave Grohl em 1995.") { Id = 1007};
+    // Adicionar uma nova música
+    var novaMusica = new Musica { Nome = "Nome da Música" };
+    musicaDAL.Adicionar(novaMusica);
 
-    //artistaDAL.Adicionar(novoArtista);
-    artistaDAL.Atualizar(novoArtista);
-    artistaDAL.Deletar(novoArtista);
-
-    var listaArtistas = artistaDAL.Listar();
-
-    foreach (var artista in listaArtistas)
+    // Listar todas as músicas
+    var musicas = musicaDAL.Listar();
+    foreach (var musica in musicas)
     {
-        Console.WriteLine(artista);
+        Console.WriteLine(musica.Nome);
     }
+
+    // Atualizar uma música
+    novaMusica.Nome = "Novo Nome da Música";
+    musicaDAL.Atualizar(novaMusica);
+
+    // Deletar uma música
+    musicaDAL.Deletar(novaMusica);
 }
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
-
-return;
-
-Artista ira = new Artista("Ira!", "Banda Ira!");
-Artista beatles = new("The Beatles", "Banda The Beatles");
-
-Dictionary<string, Artista> artistasRegistrados = new();
-artistasRegistrados.Add(ira.Nome, ira);
-artistasRegistrados.Add(beatles.Nome, beatles);
 
 Dictionary<int, Menu> opcoes = new();
 opcoes.Add(1, new MenuRegistrarArtista());
@@ -71,7 +66,7 @@ void ExibirOpcoesDoMenu()
     if (opcoes.ContainsKey(opcaoEscolhidaNumerica))
     {
         Menu menuASerExibido = opcoes[opcaoEscolhidaNumerica];
-        menuASerExibido.Executar(artistasRegistrados);
+        menuASerExibido.Executar(artistaDAL);
         if (opcaoEscolhidaNumerica > 0) ExibirOpcoesDoMenu();
     }
     else
