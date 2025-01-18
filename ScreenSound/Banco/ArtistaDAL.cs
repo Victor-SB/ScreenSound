@@ -13,30 +13,16 @@ namespace ScreenSound.Banco
     {
         public IEnumerable<Artista> Listar()
         {
-            var lista = new List<Artista>();
-            using var connection = new Connection().ObterConexao();
-            connection.Open();
+            using var context = new ScreenSoundContext();
 
-            string sql = "SELECT * FROM Artistas";
-            SqlCommand command = new SqlCommand(sql, connection);
-            using SqlDataReader dataReader = command.ExecuteReader();
+            return context.Artistas.ToList();
 
-            while (dataReader.Read())
-            {
-                string nomeArtista = Convert.ToString(dataReader["Nome"]);
-                string bioArtista = Convert.ToString(dataReader["Bio"]);
-                int idArtista = Convert.ToInt32(dataReader["Id"]);
-                Artista artista = new(nomeArtista, bioArtista) { Id = idArtista };
-
-                lista.Add(artista);
-            }
-            return lista;
         }
 
         //Método adicionar novos artistas
-        public void Adicionar(Artista artista)
+        /*public void Adicionar(Artista artista)
         {
-            using var connection = new Connection().ObterConexao();
+            using var connection = new ScreenSoundContext().ObterConexao();
             connection.Open();
 
             string sql = "INSERT INTO Artistas (Nome, FotoPerfil, Bio) VALUES (@nome, @perfilPadrao, @bio)";
@@ -54,7 +40,7 @@ namespace ScreenSound.Banco
         //Método atualizar artistas
         public void Atualizar(Artista artista)
         {
-            using var connection = new Connection().ObterConexao();
+            using var connection = new ScreenSoundContext().ObterConexao();
             connection.Open();
 
             string sql = $"UPDATE Artistas SET Nome = @nome, Bio = @bio WHERE Id = @id";
@@ -70,7 +56,7 @@ namespace ScreenSound.Banco
         }
         public void Deletar(Artista artista)
         {
-            using var connection = new Connection().ObterConexao();
+            using var connection = new ScreenSoundContext().ObterConexao();
             connection.Open();
 
             string sql = $"DELETE FROM Artistas WHERE Id = @id";
@@ -83,5 +69,6 @@ namespace ScreenSound.Banco
         }
         
         
+    }*/
     }
 }

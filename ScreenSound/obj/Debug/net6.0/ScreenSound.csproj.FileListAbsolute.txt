@@ -60,3 +60,16 @@ C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\runti
 C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\obj\Debug\net6.0\ScreenSound.csproj.CopyComplete
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

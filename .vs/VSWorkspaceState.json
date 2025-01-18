@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ScreenSound",
+    "\\ScreenSound\\Banco",
+    "\\ScreenSound\\Menus",
+    "\\ScreenSound\\Modelos",
+    "\\ScreenSound\\obj"
   ],
-  "SelectedNode": "\\ScreenSound.sln",
+  "SelectedNode": "\\ScreenSound\\ScreenSound.csproj",
   "PreviewInSolutionExplorer": false
 }
