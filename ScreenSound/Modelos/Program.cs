@@ -4,30 +4,7 @@ using ScreenSound.Modelos;
 
 
 var context = new ScreenSoundContext();
-//var artistaDAL = new ArtistaDAL(context);
-//var musicaDAL = new ScreenSoundContext();
-
-{
-    /*var musicaDAL = new MusicaDAL(context);
-
-    // Adicionar uma nova música
-    var novaMusica = new Musica { Nome = "Nome da Música" };
-    musicaDAL.Adicionar(novaMusica);
-
-    // Listar todas as músicas
-    var musicas = musicaDAL.Listar();
-    foreach (var musica in musicas)
-    {
-        Console.WriteLine(musica.Nome);
-    }
-
-    // Atualizar uma música
-    novaMusica.Nome = "Novo Nome da Música";
-    musicaDAL.Atualizar(novaMusica);
-
-    // Deletar uma música
-    musicaDAL.Deletar(novaMusica);
-}*/
+var artistaDAL = new DAL<Artista>(context);
 
     Dictionary<int, Menu> opcoes = new();
     opcoes.Add(1, new MenuRegistrarArtista());
@@ -66,7 +43,7 @@ var context = new ScreenSoundContext();
         if (opcoes.ContainsKey(opcaoEscolhidaNumerica))
         {
             Menu menuASerExibido = opcoes[opcaoEscolhidaNumerica];
-            //menuASerExibido.Executar(artistaDAL);
+            menuASerExibido.Executar(artistaDAL);
             if (opcaoEscolhidaNumerica > 0) ExibirOpcoesDoMenu();
         }
         else
@@ -76,4 +53,3 @@ var context = new ScreenSoundContext();
     }
 
     ExibirOpcoesDoMenu();
-}
