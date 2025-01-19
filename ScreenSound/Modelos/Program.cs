@@ -4,8 +4,8 @@ using ScreenSound.Modelos;
 
 
 var context = new ScreenSoundContext();
-var artistaDAL = new ArtistaDAL(context);
-var musicaDAL = new ScreenSoundContext();
+//var artistaDAL = new ArtistaDAL(context);
+//var musicaDAL = new ScreenSoundContext();
 
 {
     var musicaDAL = new MusicaDAL(context);
