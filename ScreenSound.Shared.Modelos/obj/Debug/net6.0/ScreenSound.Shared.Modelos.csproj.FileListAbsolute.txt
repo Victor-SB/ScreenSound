@@ -1,0 +1,12 @@
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\bin\Debug\net6.0\ScreenSound.Shared.Modelos.deps.json
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\bin\Debug\net6.0\ScreenSound.Shared.Modelos.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\bin\Debug\net6.0\ScreenSound.Shared.Modelos.pdb
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\ScreenSound.Shared.Modelos.csproj.AssemblyReference.cache
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\ScreenSound.Shared.Modelos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\ScreenSound.Shared.Modelos.AssemblyInfoInputs.cache
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\ScreenSound.Shared.Modelos.AssemblyInfo.cs
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\ScreenSound.Shared.Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\ScreenSound.Shared.Modelos.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\refint\ScreenSound.Shared.Modelos.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\ScreenSound.Shared.Modelos.pdb
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Modelos\obj\Debug\net6.0\ref\ScreenSound.Shared.Modelos.dll

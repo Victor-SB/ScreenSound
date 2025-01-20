@@ -1,0 +1,17 @@
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\bin\Debug\net6.0\ScreenSound.Shared.Dados.deps.json
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\bin\Debug\net6.0\ScreenSound.Shared.Dados.runtimeconfig.json
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\bin\Debug\net6.0\ScreenSound.Shared.Dados.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\bin\Debug\net6.0\ScreenSound.Shared.Dados.pdb
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\bin\Debug\net6.0\ScreenSound.Shared.Modelos.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\bin\Debug\net6.0\ScreenSound.Shared.Modelos.pdb
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.csproj.AssemblyReference.cache
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.AssemblyInfoInputs.cache
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.AssemblyInfo.cs
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.csproj.CoreCompileInputs.cache
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.csproj.CopyComplete
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\refint\ScreenSound.Shared.Dados.dll
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.pdb
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ScreenSound.Shared.Dados.genruntimeconfig.cache
+C:\Users\Victor Hugo\source\repos\ScreenSound\ScreenSound.Shared.Dados\obj\Debug\net6.0\ref\ScreenSound.Shared.Dados.dll
