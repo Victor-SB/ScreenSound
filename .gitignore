@@ -1,0 +1,50 @@
+## Ignore do Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build Results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+## Rider
+.idea/
+*.sln.iml
+
+## Arquivos de log e temporários
+*.log
+*.tmp
+*.bak
+*.ncb
+*.cache
+*.config
+*.DS_Store
+*.vscode/
+
+## Arquivos de publish
+.publish/
+
+## Arquivos de pacotes
+*.nupkg
+*.snupkg
+*.nuspec
+*.vsix
+
+## Arquivos específicos do projeto
+*.dbmdl
+*.dbproj.schemaview
+
+# Visual Studio Code
+.vscode/
+
+# Arquivos de Sourcelink e Up2Date
+*.Up2Date
+*.sourcelink.json
