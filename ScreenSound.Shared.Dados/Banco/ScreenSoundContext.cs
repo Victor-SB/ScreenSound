@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ScreenSound.Banco;
-public class ScreenSoundContext: DbContext
+public class ScreenSoundContext : DbContext
 {
     //Identificação tabela Artistas
     public DbSet<Artista> Artistas { get; set; }
@@ -19,9 +19,9 @@ public class ScreenSoundContext: DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder
-            .UseSqlServer(connectionString)
-            .UseLazyLoadingProxies();
+            .UseSqlServer(connectionString);
+            //.UseLazyLoadingProxies();
     }
- 
+
 }
 
