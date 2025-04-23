@@ -44,16 +44,15 @@ namespace ScreenSound.API.Endpoints
                 return Results.NoContent();
             });
 
-            app.MapPut("/Artistas", ([FromServices] DAL<Artista> dal, [FromBody] Artista artista) =>
+            app.MapPut("/Artistas", ([FromServices] DAL<Artista> dal, [FromBody] ArtistaRequestEdit artistaRequestEdit) =>
             {
-                var artistaAAtualizar = dal.RecuperarPor(a => a.Id == artista.Id);
+                var artistaAAtualizar = dal.RecuperarPor(a => a.Id == artistaRequestEdit.Id);
                 if (artistaAAtualizar is null)
                 {
                     return Results.NotFound();
                 }
-                artistaAAtualizar.Nome = artista.Nome;
-                artistaAAtualizar.Bio = artista.Bio;
-                artistaAAtualizar.FotoPerfil = artista.FotoPerfil;
+                artistaAAtualizar.Nome = artistaRequestEdit.nome;
+                artistaAAtualizar.Bio = artistaRequestEdit.bio;
 
                 dal.Atualizar(artistaAAtualizar);
                 return Results.Ok();
