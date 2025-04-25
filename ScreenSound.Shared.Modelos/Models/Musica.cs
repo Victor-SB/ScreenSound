@@ -1,6 +1,10 @@
 ﻿namespace ScreenSound.Modelos;
 public class Musica
 {
+    public Musica()
+    {
+
+    }
 
     //Contrtutor com parâmetro
     public Musica(string nome, int anoLancamento)
@@ -9,10 +13,11 @@ public class Musica
         AnoLancamento = anoLancamento;
     }
 
-    public string Nome { get; set; }
+    public string Nome { get; set; } = string.Empty;
     public int Id { get; set; }
     public int Duracao { get; internal set; }
-    public int AnoLancamento { get; set; }
+    public int? AnoLancamento { get; set; }
+    public int? ArtistaId { get; set; }
     public virtual Artista? Artista { get; set; }
 
     public void ExibirFichaTecnica()
