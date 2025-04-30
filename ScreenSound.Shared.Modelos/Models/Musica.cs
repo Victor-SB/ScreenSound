@@ -5,14 +5,13 @@ public class Musica
 {
     public Musica()
     {
-
+       
     }
 
     //Contrtutor com parâmetro
-    public Musica(string nome, int anoLancamento)
+    public Musica(string nome)
     {
         Nome = nome;
-        AnoLancamento = anoLancamento;
     }
 
     public string Nome { get; set; } = string.Empty;
