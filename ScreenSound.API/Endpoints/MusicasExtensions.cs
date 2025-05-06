@@ -81,8 +81,8 @@ namespace ScreenSound.API.Endpoints
             foreach (var item in generos)
             {
                 var entity = RequestToEntity(item);
-                var genero = dalGenero.RecuperarPor(g=>g.Nome.ToUpper().Equals(item.Nome.ToUpper()));
-                if (genero is null)
+                var genero = dalGenero.RecuperarPor(g=>g.Nome.ToUpper().Equals(item.nome.ToUpper()));
+                if (genero is not null)
                 {
                     listaDeGeneros.Add(genero);
                 }
@@ -96,7 +96,7 @@ namespace ScreenSound.API.Endpoints
 
         private static Genero RequestToEntity(GeneroRequest genero)
         {
-            return new Genero() { Nome = genero.Nome, Descricao = genero.Descricao };
+            return new Genero() { Nome = genero.nome, Descricao = genero.descricao };
         }
 
         private static ICollection<MusicaResponse> EntityListToResponseList(IEnumerable<Musica> musicaList)
