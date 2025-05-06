@@ -45,6 +45,22 @@ public static class GenerosExtensions
             dal.Deletar(genero);
             return Results.NoContent();
         });
+
+        app.MapPut("/Generos", ([FromServices] DAL<Genero> dal, [FromBody] GeneroRequestEdit generoRequestEdit) =>
+        {
+            var GeneroAAtualizar = dal.RecuperarPor(g => g.Id == generoRequestEdit.Id);
+            if (GeneroAAtualizar is null)
+            {
+                return Results.NotFound();
+            }
+            GeneroAAtualizar.Nome = generoRequestEdit.nome;
+            GeneroAAtualizar.Descricao = generoRequestEdit.descricao;
+
+            dal.Atualizar(GeneroAAtualizar);
+            return Results.Ok();
+
+        });
+        
         #endregion
     }
 
@@ -55,7 +71,7 @@ public static class GenerosExtensions
 
     private static Genero RequestToEntity(GeneroRequest generoRequest)
     {
-        return new Genero() { Nome = generoRequest.Nome, Descricao = generoRequest.Descricao };
+        return new Genero() { Nome = generoRequest.nome, Descricao = generoRequest.descricao };
     }
 
     private static ICollection<GeneroResponse> EntittyListToResponseList(IEnumerable<Genero> generoList)
