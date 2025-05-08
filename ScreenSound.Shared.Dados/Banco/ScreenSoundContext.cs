@@ -16,12 +16,17 @@ public class ScreenSoundContext : DbContext
     public DbSet<Musica> Musicas { get; set; }
     public DbSet <Genero> Generos { get; set; }
 
-    //private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScreenSoundV0;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ScreenSoundV0;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+    public ScreenSoundContext(DbContextOptions options) : base(options)
+        { 
 
-    private string connectionString = "Server=tcp:screensound-srv.database.windows.net,1433;Initial Catalog=ScreenSoundV0;Persist Security Info=False;User ID=administrador;Password=Senha@001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
+        }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        if (optionsBuilder.IsConfigured)
+        {
+            return;
+        }
         optionsBuilder
             .UseSqlServer(connectionString)
             .UseLazyLoadingProxies();
