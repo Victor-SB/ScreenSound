@@ -1,5 +1,4 @@
-﻿using ScreenSound.Modelos;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ScreenSound.Web.Requests;
 
