@@ -24,10 +24,20 @@
 
         <div class="d-flex align-center justify-space-between mt-4">
             <MudButton Variant="Variant.Filled"
+                       StartIcon="@Icons.Material.Filled.Save"
                        @onclick="Cadastrar"
                        Color="Color.Primary"
                        Class="ml-auto">
                 Cadastrar
+            </MudButton>
+        </div>
+        <div class="d-flex align-center justify-space-between mt-4">
+            <MudButton Variant="Variant.Filled"
+                       StartIcon="@Icons.Material.Filled.KeyboardReturn"
+                       @onclick="Voltar"
+                       Color="Color.Primary"
+                       Class="ml-auto">
+                Voltar
             </MudButton>
         </div>
 
@@ -41,6 +51,11 @@
     {
         var request = new ArtistaRequest(nome!, biografia!);
         await artistaAPI.AddArtistaAsync(request);
+        navigationManager.NavigateTo("/Artistas");
+    }
+
+    private void Voltar()
+    {
         navigationManager.NavigateTo("/Artistas");
     }
 
