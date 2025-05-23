@@ -54,6 +54,7 @@
 @code {
     private string? nome;
     private string? biografia;
+    private string? fotoPerfil;
     [Parameter]
     public string? NomeArtista { get; set; }
 
@@ -68,7 +69,7 @@
 
        private async Task Editar()
     {
-        var requestEdit = new ArtistaRequestEdit(Artista!.Id, nome!, biografia!);
+        var requestEdit = new ArtistaRequestEdit(Artista!.Id, nome!, biografia!, fotoPerfil!);
         await artistaAPI.EditarArtistaAsync(requestEdit);
         navigationManager.NavigateTo("/Artistas");
     }

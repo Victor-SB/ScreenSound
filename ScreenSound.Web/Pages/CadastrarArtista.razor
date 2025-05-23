@@ -58,12 +58,12 @@
 @code {
     private string? nome;
     private string? biografia;
-
+    private string? fotoPerfil;
     private string? fileImage;
 
     private async Task Cadastrar()
     {
-        var request = new ArtistaRequest(nome!, biografia!);
+        var request = new ArtistaRequest(nome!, biografia!, fotoPerfil!);
         await artistaAPI.AddArtistaAsync(request);
         navigationManager.NavigateTo("/Artistas");
     }
