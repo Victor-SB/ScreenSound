@@ -27,6 +27,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 var app = builder.Build();
 
+app.UseStaticFiles();
+
 app.AddEndPointsArtistas();
 app.AddEndPointsMusicas();
 app.AddEndPointsGeneros();
