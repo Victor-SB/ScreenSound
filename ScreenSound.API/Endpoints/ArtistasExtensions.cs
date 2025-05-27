@@ -48,7 +48,7 @@ namespace ScreenSound.API.Endpoints
 
                 var artista = new Artista(artistaRequest.nome, artistaRequest.bio)
                 {
-                    FotoPerfil = $"/FotoPerfil/{imagemArtista}"
+                    FotoPerfil = $"/FotosPerfil/{imagemArtista}"
                 };
                 dal.Adicionar(artista);
 
