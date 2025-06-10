@@ -17,7 +17,8 @@ public static class GenerosExtensions
         app.MapGet("/Generos", ([FromServices] DAL<Genero> dal) =>
         {
             return EntittyListToResponseList(dal.Listar());
-        });
+        })
+        .WithTags("Generos");
 
         app.MapGet("/Generos{nome}", ([FromServices] DAL<Genero> dal, string nome) =>
         {
@@ -28,12 +29,14 @@ public static class GenerosExtensions
                 return Results.Ok(response);
             }
             return Results.NotFound("Genero não encontrado.");
-        });
+        })
+            .WithTags("Generos");
 
         app.MapPost("/Generos", ([FromServices] DAL<Genero> dal, [FromBody] GeneroRequest generoRequest) =>
         {
             dal.Adicionar(RequestToEntity(generoRequest));
-        });
+        })
+            .WithTags("Generos");
 
         app.MapDelete("/Generos/{id}", ([FromServices] DAL<Genero> dal, int id) =>
         {
@@ -44,7 +47,8 @@ public static class GenerosExtensions
             }
             dal.Deletar(genero);
             return Results.NoContent();
-        });
+        })
+            .WithTags("Generos");
 
         app.MapPut("/Generos", ([FromServices] DAL<Genero> dal, [FromBody] GeneroRequestEdit generoRequestEdit) =>
         {
@@ -59,8 +63,9 @@ public static class GenerosExtensions
             dal.Atualizar(GeneroAAtualizar);
             return Results.Ok();
 
-        });
-        
+        })
+            .WithTags("Generos");
+
         #endregion
     }
 

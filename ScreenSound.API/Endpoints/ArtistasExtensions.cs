@@ -21,7 +21,8 @@ namespace ScreenSound.API.Endpoints
 
                 var listaDeArtistaResponse = EntityListToResponseList(listaDeArtistas);
                 return Results.Ok(listaDeArtistaResponse);
-            });
+            })
+                .WithTags("Artistas");
 
             app.MapGet("/Artistas/{nome}", ([FromServices] DAL<Artista> dal, string nome) =>
             {
@@ -32,7 +33,8 @@ namespace ScreenSound.API.Endpoints
                 }
 
                 return Results.Ok(EntityToResponse(artista));
-            });
+            })
+                .WithTags("Artistas");
 
             app.MapPost("/Artistas", async ([FromServices] IHostEnvironment env, [FromServices] DAL<Artista> dal, [FromBody] ArtistaRequest artistaRequest) =>
             {
@@ -53,7 +55,8 @@ namespace ScreenSound.API.Endpoints
                 dal.Adicionar(artista);
 
                 return Results.Ok();
-            });
+            })
+                .WithTags("Artistas");
 
             app.MapDelete("/Artistas/{id}", ([FromServices] DAL<Artista> dal, int id) =>
             {
@@ -64,7 +67,8 @@ namespace ScreenSound.API.Endpoints
                 }
                 dal.Deletar(artista);
                 return Results.NoContent();
-            });
+            })
+                .WithTags("Artistas");
 
             app.MapPut("/Artistas", ([FromServices] DAL<Artista> dal, [FromBody] ArtistaRequestEdit artistaRequestEdit) =>
             {
@@ -78,7 +82,8 @@ namespace ScreenSound.API.Endpoints
 
                 dal.Atualizar(artistaAAtualizar);
                 return Results.Ok();
-            });
+            })
+                .WithTags("Artistas");
             #endregion
         }
 

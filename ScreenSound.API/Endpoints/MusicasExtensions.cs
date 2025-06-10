@@ -22,7 +22,8 @@ namespace ScreenSound.API.Endpoints
                 }
                 var musicaListResponse = EntityListToResponseList(musicaList);
                 return Results.Ok(musicaListResponse);
-            });
+            })
+                .WithTags("Musicas");
 
             app.MapGet("/Musicas/{nome}", ([FromServices] DAL<Musica> dal, string nome) =>
             {
@@ -32,7 +33,8 @@ namespace ScreenSound.API.Endpoints
                     return Results.NotFound();
                 }
                 return Results.Ok(EntityToResponse(musica));
-            });
+            })
+                .WithTags("Musicas");
 
             app.MapPost("/Musicas", ([FromServices] DAL<Musica> dal, [FromServices] DAL < Genero > dalGenero, [FromBody] MusicaRequest musicaRequest) =>
             {
@@ -46,7 +48,8 @@ namespace ScreenSound.API.Endpoints
                 dal.Adicionar(musica);
 
                 return Results.Ok();
-            });
+            })
+                .WithTags("Musicas");
 
             app.MapDelete("/Musicas/{id}", ([FromServices] DAL<Musica> dal, int id) =>
             {
@@ -57,7 +60,8 @@ namespace ScreenSound.API.Endpoints
                 }
                 dal.Deletar(musica);
                 return Results.NoContent();
-            });
+            })
+                .WithTags("Musicas");
 
             app.MapPut("/Musicas", ([FromServices] DAL<Musica> dal, [FromBody] MusicaRequestEdit musicaRequestEdit) =>
             {
@@ -71,7 +75,8 @@ namespace ScreenSound.API.Endpoints
 
                 dal.Atualizar(musicaAAtualizar);
                 return Results.Ok();
-            });
+            })
+                .WithTags("Musicas");
             #endregion
         }
 
