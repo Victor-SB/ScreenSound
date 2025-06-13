@@ -61,6 +61,7 @@
             </MudButton>
             <MudButton Variant="Variant.Filled"
                        Color="Color.Info"
+                       @onclick="Voltar"
                        Class="ml-3">
                 Voltar
             </MudButton>
@@ -110,10 +111,14 @@
         }
     }
 
-    public async Task Deletar()
+    private async Task Deletar()
     {
         await musicaAPI.DeleteMusicasAsync(Musica!.Id);
-        navigationManager.NavigateTo("/MusicasPorArtistas");
+        navigationManager.NavigateTo("/MusicasPorArtista");
+    }
+    private void Voltar()
+    {
+        navigationManager.NavigateTo("/MusicasPorArtista");
     }
 }
 

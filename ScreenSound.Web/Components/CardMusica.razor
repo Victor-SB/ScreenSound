@@ -1,5 +1,5 @@
 ﻿<MudCard>
-    <MudCardMedia Image="images/cardArtista.png"></MudCardMedia>
+    <MudCardMedia Image="images/card_Artista.png"></MudCardMedia>
     <MudCardHeader>
         <CardHeaderContent>
             <MudText Typo="Typo.h6">@Musica!.Nome</MudText>
@@ -8,6 +8,11 @@
     <MudCardContent>
         <MudText Typo="Typo.body2">Artista/Banda:@Musica!.NomeArtista</MudText>
     </MudCardContent>
+    <MudCardActions>
+        <MudButton Color="Color.Warning"
+                   Variant="Variant.Outlined"
+                   Href=@($"/EditarMusica/{Musica!.Nome}")>Detalhes</MudButton>
+    </MudCardActions>
 </MudCard>
 
 
