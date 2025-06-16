@@ -9,7 +9,6 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors();
 
 builder.Services.AddDbContext<ScreenSoundContext>((options) => 
 {
@@ -25,7 +24,21 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+
+builder.Services.AddCors(
+    Options => Options.AddPolicy(
+        "wasm",
+         policy => policy.WithOrigins([builder.Configuration["backendURL"] ?? "https://localhost:7254",
+         builder.Configuration["FrontendUrl"] ?? "https://localhost:7082"])
+         .AllowAnyMethod()
+         .SetIsOriginAllowed(pol => true)
+         .AllowAnyHeader()
+         .AllowCredentials()));
+
 var app = builder.Build();
+
+app.UseCors("wasm");
 
 app.UseStaticFiles();
 
@@ -36,10 +49,10 @@ app.AddEndPointsGeneros();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseCors(x => x
-    .AllowAnyMethod()
-    .AllowAnyHeader()
-    .SetIsOriginAllowed(origin => true)
-    .AllowCredentials());
+//app.UseCors(x => x
+//    .AllowAnyMethod()
+//    .AllowAnyHeader()
+//    .SetIsOriginAllowed(origin => true)
+//    .AllowCredentials());
 
 app.Run();
