@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using ScreenSound.API.Requests;
 using ScreenSound.API.Response;
 using ScreenSound.Banco;
@@ -10,8 +11,13 @@ namespace ScreenSound.API.Endpoints
     {
         public static void AddEndPointsArtistas(this WebApplication app)
         {
+
+            var groupBuilder = app.MapGroup("artistas")
+                .RequireAuthorization()
+                .WithTags("Artistas");
+
             #region Artistas
-            app.MapGet("/Artistas", ([FromServices] DAL<Artista> dal) =>
+            groupBuilder.MapGet("", ([FromServices] DAL<Artista> dal) =>
             {
                 var listaDeArtistas = dal.Listar();
                 if (listaDeArtistas is null)
@@ -21,10 +27,10 @@ namespace ScreenSound.API.Endpoints
 
                 var listaDeArtistaResponse = EntityListToResponseList(listaDeArtistas);
                 return Results.Ok(listaDeArtistaResponse);
-            })
-                .WithTags("Artistas");
+            });
 
-            app.MapGet("/Artistas/{nome}", ([FromServices] DAL<Artista> dal, string nome) =>
+
+            groupBuilder.MapGet("{nome}", ([FromServices] DAL<Artista> dal, string nome) =>
             {
                 var artista = dal.RecuperarPor(a => a.Nome.ToUpper().Equals(nome.ToUpper()));
                 if (artista is null)
@@ -33,10 +39,9 @@ namespace ScreenSound.API.Endpoints
                 }
 
                 return Results.Ok(EntityToResponse(artista));
-            })
-                .WithTags("Artistas");
+            });
 
-            app.MapPost("/Artistas", async ([FromServices] IHostEnvironment env, [FromServices] DAL<Artista> dal, [FromBody] ArtistaRequest artistaRequest) =>
+            groupBuilder.MapPost("", async ([FromServices] IHostEnvironment env, [FromServices] DAL<Artista> dal, [FromBody] ArtistaRequest artistaRequest) =>
             {
                 var nome = artistaRequest.nome.Trim();
                 var imagemArtista = DateTime.Now.ToString("ddMMyyyyhhss") + "." + nome + ".jpeg";
@@ -55,10 +60,9 @@ namespace ScreenSound.API.Endpoints
                 dal.Adicionar(artista);
 
                 return Results.Ok();
-            })
-                .WithTags("Artistas");
+            });
 
-            app.MapDelete("/Artistas/{id}", ([FromServices] DAL<Artista> dal, int id) =>
+            groupBuilder.MapDelete("{id}", ([FromServices] DAL<Artista> dal, int id) =>
             {
                 var artista = dal.RecuperarPor(a => a.Id == id);
                 if (artista is null)
@@ -67,10 +71,9 @@ namespace ScreenSound.API.Endpoints
                 }
                 dal.Deletar(artista);
                 return Results.NoContent();
-            })
-                .WithTags("Artistas");
+            });
 
-            app.MapPut("/Artistas", ([FromServices] DAL<Artista> dal, [FromBody] ArtistaRequestEdit artistaRequestEdit) =>
+            groupBuilder.MapPut("", ([FromServices] DAL<Artista> dal, [FromBody] ArtistaRequestEdit artistaRequestEdit) =>
             {
                 var artistaAAtualizar = dal.RecuperarPor(a => a.Id == artistaRequestEdit.Id);
                 if (artistaAAtualizar is null)
@@ -82,8 +85,7 @@ namespace ScreenSound.API.Endpoints
 
                 dal.Atualizar(artistaAAtualizar);
                 return Results.Ok();
-            })
-                .WithTags("Artistas");
+            });
             #endregion
         }
 

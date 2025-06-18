@@ -12,15 +12,18 @@ public static class GenerosExtensions
 
     public static void AddEndPointsGeneros(this WebApplication app)
     {
+        var groupBuilder = app.MapGroup("Generos")
+            .RequireAuthorization()
+            .WithTags("Generos");
+
         #region ENDPOINT GENERO
 
-        app.MapGet("/Generos", ([FromServices] DAL<Genero> dal) =>
+        groupBuilder.MapGet("", ([FromServices] DAL<Genero> dal) =>
         {
             return EntittyListToResponseList(dal.Listar());
-        })
-        .WithTags("Generos");
+        });
 
-        app.MapGet("/Generos{nome}", ([FromServices] DAL<Genero> dal, string nome) =>
+        groupBuilder.MapGet("{nome}", ([FromServices] DAL<Genero> dal, string nome) =>
         {
             var genero = dal.RecuperarPor(g => g.Nome.ToUpper().Equals(nome.ToUpper()));
             if (genero is not null)
@@ -29,16 +32,14 @@ public static class GenerosExtensions
                 return Results.Ok(response);
             }
             return Results.NotFound("Genero não encontrado.");
-        })
-            .WithTags("Generos");
+        });
 
-        app.MapPost("/Generos", ([FromServices] DAL<Genero> dal, [FromBody] GeneroRequest generoRequest) =>
+        groupBuilder.MapPost("", ([FromServices] DAL<Genero> dal, [FromBody] GeneroRequest generoRequest) =>
         {
             dal.Adicionar(RequestToEntity(generoRequest));
-        })
-            .WithTags("Generos");
+        });
 
-        app.MapDelete("/Generos/{id}", ([FromServices] DAL<Genero> dal, int id) =>
+        groupBuilder.MapDelete("{id}", ([FromServices] DAL<Genero> dal, int id) =>
         {
             var genero = dal.RecuperarPor(g => g.Id == id);
             if (genero is null)
@@ -47,10 +48,9 @@ public static class GenerosExtensions
             }
             dal.Deletar(genero);
             return Results.NoContent();
-        })
-            .WithTags("Generos");
+        });
 
-        app.MapPut("/Generos", ([FromServices] DAL<Genero> dal, [FromBody] GeneroRequestEdit generoRequestEdit) =>
+        groupBuilder.MapPut("", ([FromServices] DAL<Genero> dal, [FromBody] GeneroRequestEdit generoRequestEdit) =>
         {
             var GeneroAAtualizar = dal.RecuperarPor(g => g.Id == generoRequestEdit.Id);
             if (GeneroAAtualizar is null)
@@ -63,8 +63,7 @@ public static class GenerosExtensions
             dal.Atualizar(GeneroAAtualizar);
             return Results.Ok();
 
-        })
-            .WithTags("Generos");
+        });
 
         #endregion
     }
